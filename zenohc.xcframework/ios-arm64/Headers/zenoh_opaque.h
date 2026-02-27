@@ -385,7 +385,7 @@ typedef struct ALIGN(8) z_owned_session_t {
  * An owned Zenoh task.
  */
 typedef struct ALIGN(8) z_owned_task_t {
-  uint8_t _0[32];
+  uint8_t _0[24];
 } z_owned_task_t;
 /**
  * The view over a string.

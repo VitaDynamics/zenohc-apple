@@ -15,4 +15,24 @@ Pod::Spec.new do |s|
   # 如果需要链接系统库
   # s.libraries = 'c++'
   # s.frameworks = 'Foundation'
+
+  # CocoaPods links this pod as -lzenohc (expects libzenohc.a). The simulator slice
+  # inside the xcframework is named zenohc-sim-universal.a, so we create a symlink
+  # in the build intermediates to satisfy the linker.
+  s.script_phases = [
+    {
+      :name => 'zenohc symlink (simulator)',
+      :execution_position => :before_compile,
+      :shell_path => '/bin/sh',
+      :script => <<-'SCRIPT'
+set -e
+if [ "${PLATFORM_NAME}" = "iphonesimulator" ]; then
+  dir="${PODS_XCFRAMEWORKS_BUILD_DIR}/zenohc"
+  if [ -f "${dir}/zenohc-sim-universal.a" ] && [ ! -f "${dir}/libzenohc.a" ]; then
+    ln -sf "zenohc-sim-universal.a" "${dir}/libzenohc.a"
+  fi
+fi
+SCRIPT
+    }
+  ]
 end
