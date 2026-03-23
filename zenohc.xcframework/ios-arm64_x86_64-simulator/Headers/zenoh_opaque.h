@@ -224,7 +224,7 @@ typedef struct ALIGN(8) z_owned_keyexpr_t {
  * An owned Zenoh <a href="https://zenoh.io/docs/manual/abstractions/#publisher"> publisher </a>.
  */
 typedef struct ALIGN(8) z_owned_publisher_t {
-  uint8_t _0[104];
+  uint8_t _0[112];
 } z_owned_publisher_t;
 /**
  * The <a href="https://zenoh.io/docs/manual/abstractions/#encoding"> encoding </a> of Zenoh data.
@@ -238,7 +238,7 @@ typedef struct ALIGN(8) z_owned_encoding_t {
  * Responds to queries sent via `z_get()` with intersecting key expression.
  */
 typedef struct ALIGN(8) z_owned_queryable_t {
-  uint8_t _0[48];
+  uint8_t _0[56];
 } z_owned_queryable_t;
 /**
  * An owned Zenoh <a href="https://zenoh.io/docs/manual/abstractions/#subscriber"> subscriber </a>.
@@ -247,7 +247,7 @@ typedef struct ALIGN(8) z_owned_queryable_t {
  * Destroying the subscriber cancels the subscription.
  */
 typedef struct ALIGN(8) z_owned_subscriber_t {
-  uint8_t _0[48];
+  uint8_t _0[56];
 } z_owned_subscriber_t;
 /**
  * A Zenoh <a href="https://zenoh.io/docs/manual/abstractions/#timestamp"> timestamp </a>.
@@ -393,6 +393,9 @@ typedef struct ALIGN(8) z_owned_task_t {
 typedef struct ALIGN(8) z_view_string_t {
   uint8_t _0[32];
 } z_view_string_t;
+/**
+ * @brief A loaned liveliness token.
+ */
 typedef struct ALIGN(8) z_loaned_liveliness_token_t {
   uint8_t _0[16];
 } z_loaned_liveliness_token_t;
@@ -400,13 +403,13 @@ typedef struct ALIGN(8) z_loaned_liveliness_token_t {
  * A loaned Zenoh publisher.
  */
 typedef struct ALIGN(8) z_loaned_publisher_t {
-  uint8_t _0[104];
+  uint8_t _0[112];
 } z_loaned_publisher_t;
 /**
  * A loaned Zenoh queryable.
  */
 typedef struct ALIGN(8) z_loaned_queryable_t {
-  uint8_t _0[48];
+  uint8_t _0[56];
 } z_loaned_queryable_t;
 /**
  * A loaned Zenoh reply error.
@@ -442,7 +445,7 @@ typedef struct ALIGN(8) z_loaned_string_array_t {
  * A loaned Zenoh subscriber.
  */
 typedef struct ALIGN(8) z_loaned_subscriber_t {
-  uint8_t _0[48];
+  uint8_t _0[56];
 } z_loaned_subscriber_t;
 /**
  * A user allocated string, viewed as a key expression.
