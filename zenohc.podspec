@@ -1,7 +1,7 @@
 # zenohc.podspec
 Pod::Spec.new do |s|
   s.name             = 'zenohc'
-  s.version          = '1.7.2'
+  s.version          = '1.8.0'
   s.summary          = 'Zenoh C library for iOS'
   s.description      = 'Zenoh C library xcframework for iOS platform'
   s.homepage         = 'https://github.com/VitaDynamics/zenohc-apple.git'
